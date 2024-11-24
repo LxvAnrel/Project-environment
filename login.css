@@ -1,0 +1,359 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background: url('imgs/bglogin.jpg') no-repeat center center/cover;
+  /* Imagem de fundo 
+  backdrop-filter: blur(5px);
+  /* Desfoque em toda a página 
+  -webkit-backdrop-filter: blur(10px);
+  /* Compatibilidade com Safari 
+  background-color: rgba(255, 255, 255, 0.2);
+   Cor semitransparente */
+}
+
+.disabled {
+  display: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.none {
+  animation: fadeOut 0.5s ease forwards;
+  /* 2s para o fade out */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    /* Totalmente visível */
+  }
+
+  100% {
+    opacity: 0;
+    /* Invisível */
+  }
+}
+
+.see {
+  animation: fadeIn 0.5s ease forwards;
+  /* 2s para o fade out */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* Totalmente visível */
+  }
+
+  100% {
+    opacity: 1;
+    /* Invisível */
+  }
+}
+.left_form {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  /* Começa no topo */
+  left: 0;
+  /* Começa do lado esquerdo */
+}
+
+.right_form {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  top: 0;
+  /* Começa no topo */
+  right: 0;
+  /* Começa do lado esquerdo */
+}
+
+/* Div que tem o fundo do login */
+.background {
+  width: 50%;
+  height: 100vh;
+  background: #151717;
+  display: flex;
+  position: relative;
+  top: 0;
+  /* Começa no topo */
+  right: 0;
+  /* Começa do lado esquerdo */
+}
+
+.right {
+  animation: slide-to-right 1s forwards;
+  /* Chama a animação */
+}
+
+@keyframes slide-to-right {
+  0% {
+    left: 0;
+    /* Início: canto esquerdo */
+  }
+
+  100% {
+    left: 50%;
+    /* Final: "encostada" no canto direito */
+  }
+}
+
+.right_alt {
+  animation: alt-register 1s forwards;
+  left: 0;
+}
+
+@keyframes alt-register {
+  0% {
+    left: 50%;
+  }
+
+  100% {
+    left: calc(50% - 230px);
+  }
+}
+
+.left {
+  right: 0;
+  animation: slide-to-left 1s forwards;
+  /* Chama a animação */
+}
+
+@keyframes slide-to-left {
+  0% {
+    left: 50%;
+    /* Início: canto esquerdo */
+  }
+
+  100% {
+    left: 0%;
+    /* Final: "encostada" no canto direito */
+  }
+}
+
+.left_alt {
+  animation: alt-login 1s forwards;
+}
+
+@keyframes alt-login {
+  0% {
+    left: calc(50% - 230px);
+  }
+
+  100% {
+    left: 50%;
+  }
+}
+
+.forms {
+  position: relative;
+  margin: auto;
+  width: 400px;
+  max-width: calc(50vw - 200px);
+}
+
+.info_form {
+  color: aliceblue;
+  font-size: 50pt;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.forgot_pswd {
+  color: aliceblue;
+  text-decoration: underline;
+  float: right;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.submit {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  color: aliceblue;
+  font-size: 18pt;
+  margin: 40px;
+  width: 300px;
+  max-width: calc(50vw - 300px);
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  /* Degradê com correção de compatibilidade */
+  background: rgb(157, 219, 173);
+  background: rgb(91, 117, 83);
+  background: -moz-radial-gradient(circle, rgba(91, 117, 83, 1) 0%, rgba(142, 184, 151, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(91, 117, 83, 1) 0%, rgba(142, 184, 151, 1) 100%);
+  background: radial-gradient(circle, rgba(91, 117, 83, 1) 0%, rgba(142, 184, 151, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b7553", endColorstr="#8eb897", GradientType=1);
+
+}
+
+.submit:hover {
+  background: #8EB897;
+  transform: scale(1.2);
+}
+
+.alt {
+  position: fixed;
+  left: 50%;
+  padding: 15px;
+  width: 230px;
+  height: 70px;
+  font-size: 20pt;
+  font-weight: 600;
+  color: rgb(38, 39, 39);
+  background: rgb(157, 219, 173);
+  background: -moz-linear-gradient(90deg, rgba(157, 219, 173, 1) 19%, rgba(91, 117, 83, 1) 77%);
+  background: -webkit-linear-gradient(90deg, rgba(157, 219, 173, 1) 19%, rgba(91, 117, 83, 1) 77%);
+  background: linear-gradient(90deg, rgba(157, 219, 173, 1) 19%, rgba(91, 117, 83, 1) 77%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9ddbad", endColorstr="#5b7553", GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9ddbad", endColorstr="#5b7553", GradientType=1);
+  border: none;
+  cursor: pointer;
+}
+
+.alt:hover {
+  background: #8EB897;
+}
+
+/* Checkbox */
+/* From Uiverse.io by Gautammsharma */
+.material-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #777777;
+  cursor: pointer;
+}
+
+.material-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border: 2px solid #5B7553;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.material-checkbox input[type="checkbox"]:checked~.checkmark {
+  background-color: #C3E8BD;
+  border-color: #8EB897;
+}
+
+.material-checkbox input[type="checkbox"]:checked~.checkmark:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.material-checkbox input[type="checkbox"]:focus~.checkmark {
+  box-shadow: 0 0 0 2px #9DDBAD;
+}
+
+.material-checkbox:hover input[type="checkbox"]~.checkmark {
+  border-color: #C3E8BD;
+}
+
+.material-checkbox input[type="checkbox"]:disabled~.checkmark {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.material-checkbox input[type="checkbox"]:disabled~.checkmark:hover {
+  border-color: #4d4d4d;
+}
+
+/* Input de texto */
+/* From Uiverse.io by mrhyddenn */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #5B7553;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #8EB897, #5B7553);
+  border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}

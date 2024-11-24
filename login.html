@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar/Registro</title>
+
+    <link rel="stylesheet" href="login.css">
+    <!-- W3Schools icons -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Material Icons Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <!-- Background -->
+    <section class="background" id="background">
+    </section>
+    <section class="left_form">
+        <!-- Forms de login -->
+        <form class="forms" id="login">
+            <h1 class="info_form">Login</h1>
+            <div class="form__group field">
+                <input type="email" class="form__field" placeholder="email" required="">
+                <label for="email" class="form__label">E-Mail</label>
+            </div>
+            
+            <div class="form__group field">
+                <input type="password" class="form__field" placeholder="password" required="">
+                <label for="email" class="form__label">Senha</label>
+            </div>
+    
+            <p class="forgot_pswd">Esqueceu a senha?</p>
+    
+            <label class="material-checkbox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Manter Conectado
+            </label>
+            
+            <button class="submit" type="submit">Entrar</button>
+        </form>
+    </section>
+
+    <section class="right_form">
+        <!-- Forms de registro -->
+        <form class="forms disabled" id="sing_up">
+            <h1 class="info_form">Registrar</h1>
+            <div class="form__group field">
+                <input type="email" class="form__field" placeholder="email" required="">
+                <label for="email" class="form__label">E-Mail</label>
+            </div>
+            
+            <div class="form__group field">
+                <input type="password" class="form__field" placeholder="password" required="">
+                <label for="email" class="form__label">Código de Verificação</label>
+            </div>
+    
+            <div class="form__group field">
+                <input type="password" class="form__field" placeholder="password" required="">
+                <label for="email" class="form__label">Senha</label>
+            </div>
+            
+            <label class="material-checkbox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Aceito os termos(<span style="text-decoration: underline;cursor: pointer; color: aliceblue;">Termos</span>)
+            </label>
+            
+            <button class="submit" type="submit">Registrar</button>
+        </form>
+    </section>
+    <button onclick="alternar()" class="alt" id="alt">Registrar <i class="material-icons">arrow_forward</i></button>
+    <!-- Script das animações -->
+    <script src="animations.js"></script>    
+</body>
+</html>
