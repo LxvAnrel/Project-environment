@@ -4,12 +4,20 @@ const bgform = document.getElementById('background');
 const altbtt = document.getElementById('alt');
 var login = true;
 var register = false;
+let isresposive = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("A página foi carregada!");
   console.log(register) // teste
   if (localStorage.getItem("log_register") == "true") {
     register = true
+  }
+  if (window.innerWidth = 768) {
+    console.log("a página não esta no responsivo")
+    isresposive = false;
+    return;
+  } else {
+    isresposive = true;
   }
   if (register == true) {
     loginform.className = ('forms disabled');
@@ -31,21 +39,44 @@ function register_mode() {
 }
 
 function alternar() {
-  if (login == true) {
-    loginform.className = ('forms none');
-    bgform.className = ('background right');
-    altbtt.className = ('alt right_alt');
+  if (isresposive == true) {
+    if (login) {
+      loginform.className = 'forms none';
+      bgform.className = 'background';
+      altbtt.className = 'alt';
+      altbtt.innerHTML = 'Login <i class="material-icons">arrow_forward</i>';
+      singupform.className = 'forms see';
+      login = false;
+    } else {
+      loginform.className = 'forms see';
+      bgform.className = 'background';
+      altbtt.className = 'alt';
+      altbtt.innerHTML = 'Registrar <i class="material-icons">arrow_forward</i>';
+      singupform.className = 'forms none';
+      login = true;
+    }
+    return console.log("Não necessita da função");
+  }
+  if (login) {
+    loginform.className = 'forms none';
+    bgform.className = 'background right';
+    altbtt.className = 'alt right_alt';
     altbtt.innerHTML = 'Login <i class="material-icons">arrow_forward</i>';
-    singupform.className = ('forms see');
+    singupform.className = 'forms see';
     login = false;
   } else {
-    loginform.className = ('forms login see');
-    bgform.className = ('background left');
-    altbtt.className = ('alt left_alt');
+    loginform.className = 'forms see';
+    bgform.className = 'background left';
+    altbtt.className = 'alt left_alt';
     altbtt.innerHTML = 'Registrar <i class="material-icons">arrow_forward</i>';
-    singupform.className = ('forms sing_up none');
+    singupform.className = 'forms none';
     login = true;
   }
+
+  // Adiciona animação de transição suave
+  setTimeout(() => {
+    bgform.style.transition = 'transform 0.5s ease';
+  }, 0);
 }
 
 /* Animação para a página index */

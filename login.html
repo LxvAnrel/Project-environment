@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Material Icons Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="auth.js"></script>
 </head>
 
 <body>
@@ -19,22 +20,22 @@
     </section>
     <section class="left_form">
         <!-- Forms de login -->
-        <form class="forms" id="login">
+        <form class="forms" id="login" onsubmit="handleLogin(event)">
             <h1 class="info_form">Login</h1>
             <div class="form__group field">
-                <input type="email" class="form__field" placeholder="email" required="">
+                <input type="email" class="form__field" placeholder="email" required="" id="loginEmail">
                 <label for="email" class="form__label">E-Mail</label>
             </div>
             
             <div class="form__group field">
-                <input type="password" class="form__field" placeholder="password" required="">
+                <input type="password" class="form__field" placeholder="password" required="" id="loginPassword">
                 <label for="email" class="form__label">Senha</label>
             </div>
     
             <p class="forgot_pswd">Esqueceu a senha?</p>
     
             <label class="material-checkbox">
-                <input type="checkbox">
+                <input type="checkbox" id="keepLogged">
                 <span class="checkmark"></span>
                 Manter Conectado
             </label>
@@ -74,5 +75,22 @@
     <button onclick="alternar()" class="alt" id="alt">Registrar <i class="material-icons">arrow_forward</i></button>
     <!-- Script das animações -->
     <script src="animations.js"></script>    
+    <script>
+    function handleLogin(event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        
+        if (login(email, password)) {
+            window.location.href = '/index.html';
+        }
+    }
+
+    // Verifica se já está logado ao carregar a página
+    if (isLoggedIn()) {
+        window.location.href = '/index.html';
+    }
+    </script>
 </body>
 </html>

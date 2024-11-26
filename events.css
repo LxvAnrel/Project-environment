@@ -1,0 +1,273 @@
+/* Estilos gerais */
+.events-body {
+    min-height: 100vh;
+    background-color: #eaefe9;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    padding: 120px 20px 20px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Seção de filtros */
+.filter-section {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 280px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.filter-section h1 {
+    color: #5B7553;
+    margin-bottom: 25px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-item {
+    width: 100%;
+}
+
+.filter-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.filter-form input,
+.filter-form select {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #666;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.filter-form input[type="date"] {
+    padding-right: 0;
+}
+
+.filter-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.filter-form button {
+    width: 100%;
+    height: 35px;
+    background-color: #5B7553;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.filter-form button:hover {
+    background-color: #4a6142;
+}
+
+/* Placeholder styling */
+.filter-form input::placeholder {
+    color: #999;
+}
+
+/* Remove spinner dos inputs number */
+.filter-form input[type="number"]::-webkit-inner-spin-button,
+.filter-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Container de eventos */
+.events-container {
+    flex: 1;
+    max-width: 1000px;
+}
+
+.events-container h2 {
+    color: #5B7553;
+    margin-bottom: 30px;
+    font-family: "Playfair Display", serif;
+    font-size: 2em;
+}
+
+/* Grid de eventos */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Cards de eventos */
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.event-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #5B7553;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.event-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content h3 {
+    color: #5B7553;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.event-description {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.event-details {
+    margin-bottom: 15px;
+}
+
+.event-details p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5B7553;
+    margin: 5px 0;
+}
+
+.event-details i {
+    font-size: 1.2em;
+}
+
+.participate-button {
+    width: 100%;
+    background-color: #5B7553;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.participate-button:hover {
+    background-color: #9ab191;
+}
+
+/* Mensagem de sem eventos */
+.no-events-message {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.no-events-message img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.no-events-message h3 {
+    color: #5B7553;
+    margin-bottom: 10px;
+}
+
+.no-events-message p {
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        padding: 100px 10px 20px 10px;
+    }
+
+    .filter-section {
+        width: auto;
+        margin: 0 10px 20px 10px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        margin: 0;
+    }
+}
+
+/* Garantir que o footer fique sempre no final */
+footer {
+    margin-top: auto;
+}

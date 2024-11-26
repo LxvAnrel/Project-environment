@@ -209,6 +209,7 @@ body {
 
 .alt {
   position: fixed;
+  z-index: 550;
   left: 50%;
   padding: 15px;
   width: 230px;
@@ -356,4 +357,147 @@ body {
 .form__field:required,
 .form__field:invalid {
   box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    background-attachment: fixed;
+  }
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    background: rgba(21, 23, 23, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .left_form, .right_form {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .forms {
+    width: 85%;
+    max-width: 350px;
+    padding: 25px;
+    background: rgba(21, 23, 23, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+  }
+
+  .form__field {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px 15px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .form__field:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 2px #8EB897;
+    border-image: none;
+  }
+
+  .form__label {
+    margin-left: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .submit {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(145deg, #8EB897, #5B7553);
+    border: none;
+    box-shadow: 0 4px 15px rgba(91, 117, 83, 0.3);
+    margin: 20px 0;
+    transition: all 0.3s ease;
+  }
+
+  .submit:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(91, 117, 83, 0.2);
+  }
+
+  .alt {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 14pt;
+    background: rgba(142, 184, 151, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .material-checkbox {
+    margin: 15px 0;
+  }
+
+  .checkmark {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .material-checkbox input[type="checkbox"]:checked ~ .checkmark {
+    background: #8EB897;
+    box-shadow: 0 2px 5px rgba(142, 184, 151, 0.3);
+  }
+
+  .see {
+    animation: fadeIn 0.3s ease forwards;
+    z-index: 500;
+  }
+
+  .none {
+    animation: fadeOut 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
+  }
+
+  .info_form {
+    font-size: 28pt;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .forgot_pswd {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 10px 0;
+  }
 }

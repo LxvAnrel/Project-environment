@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos</title>
 
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Css padrão -->
     <link rel="stylesheet" href="index.css">
     <!-- Css da página -->
     <link rel="stylesheet" href="events.css">
 </head>
 
-<body>
+<body class="events-body">
+    <div class="logo-container">
+        <img src="imgs/logo_site.png" alt="Logo Flora Já" class="logo">
+    </div>
     <menu class="menu">
         <button onclick="window.location.href='/index.html'">Home</button>
         <button>Eventos</button>
@@ -20,6 +25,131 @@
         <button class="login" onclick="window.location.href='/login.html'">Conectar</button>
     </menu>
 
+    <main class="main-content">
+        <section class="filter-section">
+            <h1>Filtrar Eventos</h1>
+            <form class="filter-form">
+                <div class="filter-group">
+                    <div class="filter-item">
+                        <label for="date">Data:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+
+                    <div class="filter-item">
+                        <label for="day">Dia da Semana:</label>
+                        <select id="day" name="day">
+                            <option value="">Selecione</option>
+                            <option value="domingo">Domingo</option>
+                            <option value="segunda">Segunda</option>
+                            <option value="terca">Terça</option>
+                            <option value="quarta">Quarta</option>
+                            <option value="quinta">Quinta</option>
+                            <option value="sexta">Sexta</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-item">
+                        <label for="city">Cidade:</label>
+                        <input type="text" id="city" name="city" placeholder="Digite a cidade">
+                    </div>
+
+                    <button type="submit">Filtrar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="events-container">
+            <h2>Eventos Disponíveis</h2>
+            <div class="events-grid">
+                <!-- Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imgs/plantio.jpeg" alt="Plantio de Árvores">
+                        <span class="event-date">24 MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Plantio Comunitário</h3>
+                        <p class="event-description">Junte-se a nós para um dia de plantio de árvores nativas em nossa comunidade. Vamos reflorestar juntos!</p>
+                        <div class="event-details">
+                            <p><i class="material-icons">location_on</i> São Paulo, SP</p>
+                            <p><i class="material-icons">access_time</i> 09:00 - 12:00</p>
+                        </div>
+                        <button class="participate-button">Participar</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imgs/reciclagem.jpeg" alt="Reciclagem">
+                        <span class="event-date">26 MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Workshop de Reciclagem</h3>
+                        <p class="event-description">Aprenda técnicas de reciclagem e transforme materiais descartados em objetos úteis.</p>
+                        <div class="event-details">
+                            <p><i class="material-icons">location_on</i> Rio de Janeiro, RJ</p>
+                            <p><i class="material-icons">access_time</i> 14:00 - 17:00</p>
+                        </div>
+                        <button class="participate-button">Participar</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imgs/limpeza.jpeg" alt="Limpeza de Praia">
+                        <span class="event-date">28 MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Limpeza de Praia</h3>
+                        <p class="event-description">Participe da nossa ação de limpeza de praia. Juntos podemos fazer a diferença!</p>
+                        <div class="event-details">
+                            <p><i class="material-icons">location_on</i> Santos, SP</p>
+                            <p><i class="material-icons">access_time</i> 08:00 - 11:00</p>
+                        </div>
+                        <button class="participate-button">Participar</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="imgs/horta.jpeg" alt="Horta Comunitária">
+                        <span class="event-date">30 MAR</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Horta Comunitária</h3>
+                        <p class="event-description">Venha aprender sobre agricultura urbana e ajudar a construir uma horta comunitária.</p>
+                        <div class="event-details">
+                            <p><i class="material-icons">location_on</i> Curitiba, PR</p>
+                            <p><i class="material-icons">access_time</i> 10:00 - 13:00</p>
+                        </div>
+                        <button class="participate-button">Participar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="about">
+            <h1 style="color: #4f7444;">Sobre nós</h1>
+            <p>Nossa História</p>
+            <p>Nossa Missão</p>
+            <p>Colaboradores</p>
+            <p>Resultados</p>
+        </div>
+
+        <div class="about contacts">
+            <h1 style="color: #4f7444;">Contatos</h1>
+            <h3>E-Mail</h3>
+            <p>contatofloraja@floraja.com.br</p>
+            <h3>Telefone</h3>
+            <p>0800 8438 2312</p>
+        </div>
+    </footer>
 </body>
 
 </html>

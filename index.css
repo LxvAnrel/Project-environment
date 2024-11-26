@@ -3,9 +3,18 @@
     padding: 0;
 }
 
-html body{
-    max-width: 100vw;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 /* Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -42,23 +51,39 @@ html body{
     min-height: 300px;
     max-height: 80vh;
     border-radius: 20px;
-    position: flex;
+    display: flex;
     flex-direction: row;
-    justify-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .info_cards::-webkit-scrollbar {
-    display: none;
+    display: block;
+    height: 8px;
 }
 
-.card {
+.info_cards::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.info_cards::-webkit-scrollbar-thumb {
+    background: #5B7553;
+    border-radius: 4px;
+}
+
+.card_info {
     background: #ffffff7b;
-    width: 90%;
+    min-width: 300px;
+    width: 300px;
     min-height: 300px;
     height: max-content;
-    margin: 20px;
+    margin: 0;
+    scroll-snap-align: start;
+    border-radius: 10px;
 }
 
 .menu {
@@ -421,4 +446,246 @@ footer p {
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
     cursor: pointer;
+}
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 768px) {
+    /* Reset de larguras e alturas */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Menu ajustado */
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 25px 25px 0 0;
+    }
+
+    .menu button {
+        font-size: 1rem;
+        margin: 5px;
+        padding: 8px;
+    }
+
+    /* Seção principal */
+    .st_home {
+        height: auto;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .right_info {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 20px 0;
+    }
+
+    .apresentacao {
+        width: 90%;
+        top: 0;
+        margin: 20px auto;
+        float: none;
+    }
+
+    .apresentacao h1 {
+        font-size: 3rem !important;
+        text-align: center !important;
+    }
+
+    .participe {
+        position: relative;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+    }
+
+    /* Imagem principal */
+    .tree_main {
+        width: 100%;
+        height: auto;
+        top: 0;
+        margin: 20px 0;
+    }
+
+    /* Cards de informação */
+    .info_cards {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card_info {
+        min-width: 250px;
+        width: 250px;
+    }
+
+    /* Carrossel */
+    .carousel-container {
+        height: auto;
+        min-height: 80vh;
+        padding-bottom: 15vh;
+        overflow: hidden;
+    }
+
+    .carousel-slide {
+        padding: 0;
+        height: auto;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #eaefe9;
+    }
+
+    .title_carrocel {
+        width: 100%;
+        height: auto;
+        min-height: 60px;
+        background: #5B7553;
+        color: #040403;
+        margin: 0;
+        padding: 15px;
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .content_text_carrocel {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+        padding: 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: justify;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+    }
+
+    .img_carrocel {
+        width: 90%;
+        height: 200px;
+        position: static;
+        float: none;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img_carrocel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .img_carrocel p {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #182319;
+    }
+
+    .progress-bar {
+        bottom: 17vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    .progress-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+
+    /* Ajuste da transição do carrossel */
+    .carousel-wrapper {
+        height: auto;
+    }
+
+    /* Social media */
+    .social_media {
+        top: 20px;
+        margin: 20px auto;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 20vh;
+    }
+
+    .about {
+        padding: 15px;
+    }
+}
+
+/* Estilos da logo para desktop */
+.logo-container {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 0 3vw;
+    width: max-content;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    /* Aplica o efeito de desfoque */
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Cor de fundo semitransparente */
+    border-radius: 0 0 25px 0px;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+/* Classe para esconder a logo ao rolar */
+.logo-hidden {
+    transform: translateY(-100%);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .logo-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+    }
 }

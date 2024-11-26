@@ -7,14 +7,18 @@
     <title>Project - Home</title>
 
     <link rel="stylesheet" href="index.css">
+    <script src="auth.js"></script>
 </head>
 
 <body class="body">
+    <div class="logo-container">
+        <img src="imgs/logo_site.png" alt="Logo Flora Já" class="logo">
+    </div>
     <menu class="menu">
-        <button onclick="window.location.href='/Project-environment/index.html'">Home</button>
-        <button>Eventos</button>
+        <button onclick="window.location.href='\Project-environment-main\index.html'">Home</button>
+        <button onclick="window.location.href='\events.html'">Eventos</button>
         <button>Recompensas</button>
-        <button class="login" onclick="window.location.href='/Project-environment/login.html'">Conectar</button>
+        <button class="login" id="authButton" onclick="handleAuthClick()">Conectar</button>
     </menu>
     <section class="st_home">
         <div class="right_info">
@@ -25,9 +29,10 @@
                     Juntos pelo Meio Ambiente: Inspire, Conscientize e Transforme! Descubra como pequenas ações podem
                     gerar grandes impactos em defesa do nosso planeta. Seja parte dessa jornada por um futuro
                     sustentável!</p>
-                <button onclick="register_mode()" class="participe"
-                    style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Entre nessa
-                    jornada!</button>
+                <button onclick="window.location.href='/login.html'" class="participe"
+                    style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    Entre nessa jornada!
+                </button>
             </div>
 
             <div class="social_media">
@@ -66,7 +71,7 @@
         </div>
         <img class="tree_main" src="imgs/main_tree.png" alt="">
         <div class="info_cards">
-            <div class="card">
+            <div class="card_info">
                 <div class="image"></div>
                 <div class="content">
                     <a href="#">
@@ -88,7 +93,7 @@
                     </a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card_info">
                 <div class="image"></div>
                 <div class="content">
                     <a href="#">
@@ -196,6 +201,30 @@
 
     <!-- Apenas para abrir á pagina de login em modo 'registrar' -->
     <script src="animations.js"></script>
+    <script>
+    function updateAuthButton() {
+        const authButton = document.getElementById('authButton');
+        if (isLoggedIn()) {
+            const userData = getUserData();
+            authButton.textContent = `Olá, ${userData.name}`;
+            authButton.onclick = logout;
+        } else {
+            authButton.textContent = 'Conectar';
+            authButton.onclick = () => window.location.href = '/login.html';
+        }
+    }
+
+    function handleAuthClick() {
+        if (isLoggedIn()) {
+            logout();
+        } else {
+            window.location.href = '/login.html';
+        }
+    }
+
+    // Atualiza o botão quando a página carrega
+    document.addEventListener('DOMContentLoaded', updateAuthButton);
+    </script>
 </body>
 
 </html>
